@@ -8,6 +8,7 @@ public class 더하기싸이클_1110 {
 
         int length=1;       // N 싸이클 길이
         int N=in.nextInt();
+        in.close();
         int first=N;    //첫 입력 값
 
         while(true){    // 첫 입력 값과 같을 때 까지
