@@ -7,13 +7,10 @@ import java.util.*;
 public class Solution {
     public int solution(int n) {
         int answer = 0;
-        String strNum = Integer.toString(n);
 
-
-        int[] arr = new int[strNum.length()];
-        for(int i=0; i<strNum.length(); i++){
-            arr[i] = strNum.charAt(i) - '0';
-            answer += arr[i];
+        while (n != 0) {
+            answer += n % 10;
+            n /= 10;
         }
 
         return answer;
