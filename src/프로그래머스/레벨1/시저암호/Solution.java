@@ -1,4 +1,5 @@
 package 프로그래머스.레벨1.시저암호;
+
 class Solution {
     public String solution(String s, int n) {
         String answer = "";
