@@ -12,12 +12,10 @@ class Solution {
                 index = 0;
             }
             else{
-                if(index%2 == 0){   // 짝수
+                if(index%2 == 0)   // 짝수
                     sb.append(Character.toUpperCase(s.charAt(i)));
-                }
-                else{   // 홀수
+                else   // 홀수
                     sb.append(Character.toLowerCase(s.charAt(i)));
-                }
                 index++;
             }
         }
