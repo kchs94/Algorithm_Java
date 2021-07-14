@@ -1,4 +1,4 @@
-package 백준.문자열.아스키코드;
+package 백준.문자열;
 import java.util.Scanner;
 /*
 * url:https://www.acmicpc.net/problem/11654
