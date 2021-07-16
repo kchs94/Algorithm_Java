@@ -21,6 +21,7 @@ public class 상수_2908 {
         Scanner in = new Scanner(System.in);
         int A = in.nextInt();
         int B = in.nextInt();
+        in.close();
 
         //알고리즘: 세 자리 수 이고 0이 포함되지 않았으므로 첫째 자리 수와 셋째 자리수만 바꾸자
         A = (A%10)*100 + (A/10)%10*10 + (A/100); // A의 일의 자리수*100 + 십의 자리 수*10 + 백의 자리수
