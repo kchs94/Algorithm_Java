@@ -1,4 +1,4 @@
-package 백준.정렬.피보나치수_10870;
+package 백준.재귀.팩토리얼_10872.피보나치수_10870;
 
 import java.util.Scanner;
 
