@@ -24,6 +24,7 @@ public class 문제_1097 {
                 else arr[x-1][i] = 0;
             }
 
+
             for(int i=0; i<19; i++){
                 if(arr[i][y-1]==0) arr[i][y-1] = 1;
                 else arr[i][y-1] =0;
