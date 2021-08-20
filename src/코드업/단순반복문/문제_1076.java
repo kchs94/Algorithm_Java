@@ -8,7 +8,7 @@ import java.util.Scanner;
 * */
 public class 문제_1076 {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);    // 입력 클래스를 생성하고 인자로 키보드를 넣어준다
         char ch = in.next().charAt(0);
         StringBuilder sb = new StringBuilder();
 
