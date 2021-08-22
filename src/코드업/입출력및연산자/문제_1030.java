@@ -7,6 +7,7 @@ public class 문제_1030 {
         Scanner in = new Scanner(System.in);
         long num = in.nextLong();
 
+
         System.out.println(num);
     }
 }
