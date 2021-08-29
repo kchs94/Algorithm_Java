@@ -5,6 +5,7 @@ public class hello_1526 {
         printHello();
     }
 
+
     public static void printHello(){
         System.out.print("hello");
     }
