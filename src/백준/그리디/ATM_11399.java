@@ -34,7 +34,7 @@ public class ATM_11399 {
         Arrays.sort(spentTime); // 오름차순으로 정렬
 
         for(int i=0; i<numOfPerson; i++){
-            minOfTime += spentTime[i]*(numOfPerson-i);
+            minOfTime += spentTime[i]*(numOfPerson-i);  // 걸린시간*반복횟수
         }
         
         // 출력
