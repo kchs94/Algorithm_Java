@@ -20,7 +20,7 @@ public class 좌표정렬하기_11650 {
             arr[i][1] = Integer.parseInt(st.nextToken());
         }
 
-        // 객체 비교
+        // 알고리즘 - Compator을 이용해서 객체를 비교하기
         Arrays.sort(arr,new Comparator<int[]>() {
            @Override
            public int compare(int[] e1, int[] e2) {
