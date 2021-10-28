@@ -1,4 +1,4 @@
-package 백준.스택;
+package 백준.스택.제로_10773;
 
 import java.util.Stack;
 import java.io.BufferedReader;
@@ -11,15 +11,20 @@ public class 제로_10773 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int K = Integer.parseInt(br.readLine());    // 갯수 K 입력
+
         int num;
-        int sum = 0;
         for(int i=0; i<K; i++){
             num = Integer.parseInt(br.readLine());
             if(num == 0){
-                sum -= stack.pop();
+                stack.pop();
             }
             else
-                sum += stack.push(num);
+                stack.push(num);
+        }
+
+        int sum = 0;
+        for(int e : stack) {
+            sum += e;
         }
 
         System.out.println(sum);
