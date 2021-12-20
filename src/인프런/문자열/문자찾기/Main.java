@@ -1,6 +1,5 @@
-package 인프런.문자열;
+package 인프런.문자열.문자찾기;
 
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
