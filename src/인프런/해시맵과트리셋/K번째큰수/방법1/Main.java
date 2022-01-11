@@ -5,9 +5,8 @@ import java.util.Scanner;
 import java.util.TreeSet;
 
 public class Main {
-
     private int solution(int n, int m, int[] arr) {
-        int answer = -1;
+        int answer = -1;    // 만약 k번째 수가 존재하지 않으면 -1
         TreeSet<Integer> set = new TreeSet<>(Collections.reverseOrder());   // 내림차순 중복제거
 
         for (int i=0; i<n; i++) {
@@ -17,9 +16,7 @@ public class Main {
                 }
             }
         }
-
-        int index = 0;
-
+        int index = 0;  // 원소 순서를 추적하기 위한 변수
         for (int x : set) {
             index++;
             if (index == m) return x;
