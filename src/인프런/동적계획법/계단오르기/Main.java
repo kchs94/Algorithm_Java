@@ -1,7 +1,4 @@
-package 인프런.다이나믹프로그래밍.계단오르기;
-
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+package 인프런.동적계획법.계단오르기;
 
 import java.util.Scanner;
 
@@ -14,7 +11,7 @@ import java.util.Scanner;
 * n번째 계단까지 가는 방법의 수 --> 1번째 계단까지 가는 방법, 2번째 계단까지 가는 방법, ... ->
 * -------------
 * 1번째 계단까지 가는 경우의 수: 1가지
-* 2번째 계딴까지 가는 경우의 수: 2가지
+* 2번째 계단까지 가는 경우의 수: 2가지
 * 1,2번은 미리 초기화한다. dp[1]=1, dp[2]=2(인덱스는 n번째 계단, 값은 n번째 계단까지 가는 방법의 경우의수)
 * 다이나믹은 다이나믹 테이블(1차원 배열)이 필요하다.
 * 3번째 계단까지 가는 경우의 수: dp[1] + dp[2]
@@ -23,29 +20,24 @@ import java.util.Scanner;
 * */
 public class Main {
 
-    static int[] dp;
+    static int[] dp;    // 작은 문제의 정답을 기억하는 배열 선언
 
     public int solution(int N) {
         dp = new int[N+1];
-        dp[1] = 1;
-        dp[2] = 2;
+        dp[1] = 1;  // 첫번째 계단까지 경우의 수
+        dp[2] = 2;  // 두번째 계단까지 경우의 수
 
-        for (int i=3; i<=N; i++) {
+        for (int i=3; i<=N; i++) {  // 3번째 계단부터 N번째까지 경우의 수 구해서 저장하기
             dp[i] = dp[i-2] + dp[i-1];
         }
 
-        return dp[N];
+        return dp[N];   // N번째 계단까지 오르는 모든 경우의 수
     }
 
     public static void main(String[] args) {
         Main T = new Main();
         Scanner in = new Scanner(System.in);
-        int N = in.nextInt();
+        int N = in.nextInt();   // 계단 선택하기
         System.out.println(T.solution(N));
-    }
-
-    @Test
-    void test() {
-        Assertions.assertEquals(21, solution(7));
     }
 }
