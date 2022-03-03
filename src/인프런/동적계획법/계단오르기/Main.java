@@ -21,7 +21,6 @@ import java.util.Scanner;
 public class Main {
 
     static int[] dp;    // 작은 문제의 정답을 기억하는 배열 선언
-
     public int solution(int N) {
         dp = new int[N+1];
         dp[1] = 1;  // 첫번째 계단까지 경우의 수

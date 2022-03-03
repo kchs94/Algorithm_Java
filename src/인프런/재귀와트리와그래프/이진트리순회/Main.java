@@ -2,24 +2,23 @@ package 인프런.재귀와트리와그래프.이진트리순회;
 
 class Node {    // 노드 클래스
     int data;   // 값
-    Node lt, rt;    // 인스턴스 변수(=필드, 멤버변수): 노드의 주소를 저장함
+    Node lt, rt;    // 노드의 주소를 저장함
     public Node(int data) {
         this.data = data;
-        lt=rt=null;
+        lt = null;
+        rt = null;
     }
 }
 
-
 public class Main {
     Node root;
-
     // 재귀
     public void DFS(Node root) {
         if (root == null) return;
         else {
             System.out.println(root.data + " ");
-            DFS(root.lt);   // 왼쪽으로 가기
-            DFS(root.rt);   // 오른쪽으로 가기
+            DFS(root.lt);   // 왼쪽가지
+            DFS(root.rt);   // 오른가지
         }
     }
 

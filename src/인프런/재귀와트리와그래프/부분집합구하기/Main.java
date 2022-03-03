@@ -7,7 +7,7 @@ public class Main {
     static boolean[] ch;    // 부분 집합의 원소로 사용했는지 안했는지를 기록하는 배열
 
     public void DFS(int value) {
-        if (value == n+1) {     // 종착점
+        if (value == n+1) {     // 범위를 넘어섰을 때 = 값이 1보다 클 때
             String temp = "";
             for (int i=1; i<=n; i++) {
                 if (ch[i] == true)
