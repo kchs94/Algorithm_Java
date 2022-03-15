@@ -28,7 +28,7 @@ public class Main {
                 System.out.print(current.data + " ");
                 if (current.left != null)   // 왼쪽 자식이 있으면 넣어준다
                     q.offer(current.left);
-                if (current.left != null)   // 오른쪽 자식이 있으면 넣어준다.
+                if (current.right != null)   // 오른쪽 자식이 있으면 넣어준다.
                     q.offer(current.right);
             }
             level++;

@@ -1,13 +1,12 @@
-package 인프런.재귀와트리와그래프.경로탐색_DFS;
+package 인프런.재귀와트리와그래프.경로탐색_DFS_인접행렬;
 
 import java.util.Scanner;
 
 /*
-* 경로탐색 - DFS
+* 경로탐색 - DFS 인접행렬로 문제 풀기
 * 노드의 갯수만큼 for문이 반복한다.
 *
-* 백트래킹이라고한다.
-* 상태트리와 호출스택을 그리면서 풀어보자
+*
 * */
 public class Main {
 
