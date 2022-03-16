@@ -1,4 +1,4 @@
-package 인프런.DFSBFS활용.섬나라아일랜드_BFS.두번째풀이;
+package 인프런.DFSBFS활용.섬나라아일랜드_DFS.두번째풀이;
 
 /*
 * 두 번째 풀이

@@ -1,34 +1,67 @@
 package 인프런.DFSBFS활용.섬나라아일랜드_BFS.첫번째풀이;
 
-/*
-* 지도 --> 2차원 배열
-* 연결되어 있다 = 값이 1인 특정 좌표의 상,하,좌,우,대각선 좌표값이 1인 경우 연결된 섬으로 본다.
-* 1은 섬
-* 0은 바다
-*
-* 입력
-* 첫 번째 줄에 지도 길이 N이 주어진다. (3<=N<=20)
-* 두 번째부터 좌표별 정보가 주어진다.
-*
-* 출력
-* 첫 번째 줄에 섬의 갯수를 출력한다.
-*
-* 몇 개의 섬이 있는 구하시오.
-*
-* 첫 번째 풀이
-* - 배열을 모두 입력받는다.
-* - 2차원 배열을 순회한다.
-* -     만약 값이 1이고 체크가 안되어 있으면 카운트 1 증가한다.
-* -     값이 1이고 체크가 안되어 있으면 상하좌우대각선에 접근한다.
-* - 실패
-* */
 
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+class Point {
+    int x,y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
 public class Main {
 
     static int N;
     static int[][] board;
+    static int[] dx = {0,1,1,1,0,-1,-1,-1};
+    static int[] dy = {-1,-1,0,1,1,1,0,-1};
+    static int answer;
+    static Queue<Point> q = new LinkedList<>();
+
+    public static void BFS(Point point) {
+        q.offer(point);
+
+        while (!q.isEmpty()) {
+            Point temp = q.poll();
+            for (int i=0; i<8; i++) {
+                int nx = temp.x + dx[i];
+                int ny = temp.y + dy[i];
+                if (nx >=0 && nx<N && ny >=0 && ny <N && board[nx][ny] == 1) {
+                    board[nx][ny] = 0;
+                    BFS(new Point(nx,ny));
+                }
+            }
+        }
+
+
+
+
+    }
 
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        N = in.nextInt();
+        board = new int[N][N];
 
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<N; j++) {
+                board[i][j] = in.nextInt();
+            }
+        }
+
+        for (int i=0; i<N; i++) {
+            for (int j=0; j<N; j++) {
+                if (board[i][j] == 1) {
+                    answer++;
+                    BFS(new Point(i,j));
+                }
+            }
+        }
+
+        System.out.println(answer);
     }
 }
