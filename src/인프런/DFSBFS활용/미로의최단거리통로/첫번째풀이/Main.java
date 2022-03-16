@@ -1,36 +1,56 @@
 package 인프런.DFSBFS활용.미로의최단거리통로.첫번째풀이;
 
+import 백준.단계별문제풀이.for문.빠른AplusB_15552;
+
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
 /*
-* 왜 BFS인가?
-* 
+* 2차원 배열 + 최단거리
+* 1.레벨 변수로 풀기
+* 2.dis 배열로 풀기 - 선택
 *
 * */
+
+class Node {
+    int x;
+    int y;
+
+    public Node(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+}
 public class Main {
 
-    static int min = Integer.MAX_VALUE;
-    static int count;
-    static int[] dx = {0,0,-1,1};
+    static int[] dx = {0,0,-1,1};       // 상,하,좌,우
     static int[] dy = {-1,1,0,0};
     static int[][] map = new int[8][8];
+    static int[][] dis = new int[8][8];
+    static boolean[][] visited = new boolean[8][8];
+    static Queue<Node> q = new LinkedList<>();
 
+    public static void BFS(int x, int y) {
+        visited[1][1] = true;
+        dis[1][1] = 0;
+        q.offer(new Node(x,y));
 
-    public static void dfs(int x,int y) {
-        if (count > min) return;
+        while (!q.isEmpty()) {
+            Node node = q.poll();
 
-        if (x == 7 && y == 7) {
-            min = Math.min(count, min);
-        }
-        else {
             for (int i=0; i<4; i++) {
-                int nx = x + dx[i];
-                int ny = y + dy[i];
-                if (nx >= 1 && nx <= 7 && ny >=1 && ny <=7 && map[nx][ny] == 0) {
-                    count++;
-                    map[nx][ny] = 1;
-                    dfs(nx, ny);
-                    map[nx][ny] = 0;
-                    count--;
+                int nx = node.x + dx[i];
+                int ny = node.y + dy[i];
+
+                if (nx == 7 && ny ==7) {
+                    dis[nx][ny] = dis[node.x][node.y] + 1;
+                    return;
+                }
+
+                if (nx >=1 && nx <=7 && ny >= 1 && ny <= 7 && map[nx][ny] == 0 && !visited[nx][ny]) {
+                    visited[nx][ny] = true;
+                    dis[nx][ny] = dis[node.x][node.y] + 1;
+                    q.offer(new Node(nx, ny));
                 }
             }
         }
@@ -38,14 +58,19 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        for (int i=1; i<8; i++) {
-            for (int j=1; j<8; j++) {
+        for (int i=1; i<=7; i++) {
+            for (int j=1; j<=7; j++) {
                 map[i][j] = in.nextInt();
             }
         }
 
-        map[1][1] = 1;
-        dfs(1,1);
-        System.out.println(min);
+        // 알고리즘
+        BFS(1,1);
+
+        if (dis[7][7] == 0)
+            System.out.println(-1);
+        else {
+            System.out.println(dis[7][7]);
+        }
     }
 }
