@@ -1,4 +1,4 @@
-package 인프런.배열.뒤집은소수.방법1;
+package 인프런.배열.뒤집은소수.나머지연산이용하기;
 
 import java.util.ArrayList;
 import java.util.Scanner;
