@@ -4,48 +4,50 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/*
+* - A 배열을 정렬합니다.
+* - B 배열을 정렬합니다.
+* - p1<n && p2<m일 상태를 유지하는 동안 반복합니다.
+* - A[p1] == B[p2]이면 해당 값을 리스트에 넣습니다.
+* - A[p1]>B[p2]이면 p2를 1 증가합니다.
+* - A[p1]<B[p2]이면 p1을 1 증가합니다.
+*
+*
+* */
 public class Main {
-
-    public ArrayList<Integer> solution(int n1, int[] arr1, int n2, int[] arr2) {
-        Arrays.sort(arr1);
-        Arrays.sort(arr2);
-        int index1 = 0;
-        int index2 = 0;
-
+    public static ArrayList<Integer> solution(int n, int[] A, int m, int[] B) {
+        int p1 = 0;
+        int p2 = 0;
         ArrayList<Integer> list = new ArrayList<>();
-        while (index1 < n1 && index2 < n2) {
+        Arrays.sort(A);
+        Arrays.sort(B);
 
-            if (arr1[index1] == arr2[index2]) {
-                list.add(arr1[index1]);
-                index1++;
-                index2++;
+        while(p1<n && p2<m) {
+            if (A[p1] == B[p2]) {
+                list.add(A[p1]);
+                p1++;
+                p2++;
             }
-            else if (arr1[index1] < arr2[index2]) {
-                index1++;
-            }
-            else if (arr1[index1] > arr2[index2]) {
-                index2++;
-            }
-
+            else if(A[p1] > B[p2]) p2++;
+            else p1++;
         }
         return list;
     }
 
     public static void main(String[] args) {
-        Main T = new Main();
         Scanner in = new Scanner(System.in);
-        int n1 = in.nextInt();
-        int[] arr1 = new int[n1];
-        for(int i=0; i<n1; i++) {
-            arr1[i] = in.nextInt();
+        int n = in.nextInt();
+        int[] A = new int[n];
+        for (int i=0; i<n; i++) {
+            A[i] = in.nextInt();
         }
-        int n2 = in.nextInt();
-        int[] arr2 = new int[n2];
-        for(int i=0; i<n2; i++) {
-            arr2[i] = in.nextInt();
+        int m = in.nextInt();
+        int[] B = new int[m];
+        for (int i=0; i<m; i++) {
+            B[i] = in.nextInt();
         }
-        for (int i : T.solution(n1, arr1, n2, arr2)) {
-            System.out.print(i + " ");
+        for (int x : solution(n,A,m,B)) {
+            System.out.print(x + " ");
         }
     }
 }
