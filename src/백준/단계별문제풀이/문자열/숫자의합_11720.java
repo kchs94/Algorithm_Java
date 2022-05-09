@@ -3,27 +3,22 @@ package 백준.단계별문제풀이.문자열;
 import java.util.Scanner;
 
 /*
-* url:https://www.acmicpc.net/problem/11720
-* 문제: N개의 숫자가 공백없이 나열되어있습니다. 이 숫자들의 합을 출력하세요.
-* 입력: 첫째 줄에 숫자의 갯수 N(1<=N<=100)이 주어지고 둘째 줄에 N개의 숫자가 공백없이 입력됩니다.
-* 출력: 입력으로 주어진 나열된 숫자의 합을 출력하세요.
+* 숫자의 갯수를 입력받습니다.
+* 각숫자가 연결된 문자열을 입력받아 문자배열로 형변환을 합니다.
+* 합(sum)을 저장할 변수를 0으로 초기화합니다.
+* 숫자의 갯수만큼 반복하여 각 요소의 값을 더합니다.
 * */
 public class 숫자의합_11720 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int N = in.nextInt();   // N 입력
-        
-        // 문자열로 입력받아 바로 쪼개 String[]에 저장
-        String[] strArr = in.next().split("");
-        in.close();
-        int[] intArr = new int[strArr.length];
+        int num = in.nextInt();
+        char[] numbers = in.next().toCharArray();
 
-        int sum=0;
-        //String[] --> int[]로 옮기기
-        for(int i=0; i<intArr.length; i++){
-            intArr[i] = Integer.parseInt(strArr[i]);
-            sum += intArr[i];
+        int sum = 0;
+        for (int i=0; i<num; i++) {
+            sum += numbers[i] - '0';
         }
+
         System.out.println(sum);
     }
 }
