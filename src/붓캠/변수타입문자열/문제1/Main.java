@@ -1,4 +1,4 @@
-package 코드스테이츠.변수타입문자열.문제1;
+package 붓캠.변수타입문자열.문제1;
 
 public class Main {
   public static void main(String[] args) {
