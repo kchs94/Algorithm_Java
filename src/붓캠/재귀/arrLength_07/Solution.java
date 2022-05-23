@@ -1,4 +1,4 @@
-package 붓캠.재귀.arrLength;
+package 붓캠.재귀.arrLength_07;
 import java.util.*;
 // 재귀함수를 이용하여 입력받은 배열의 길이를 구해야하는 문제
 // 만약 빈배열이라면 0을 반환한다.
