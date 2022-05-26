@@ -7,8 +7,6 @@ package 인프런.문자열.가장짧은문자거리.방법1;
 import java.util.Scanner;
 
 public class Main {
-
-    @Test
     public int[] solution(String str, char ch) {
         char[] chars = str.toCharArray();
         int[] result = new int[chars.length];

@@ -1,6 +1,5 @@
 package 붓캠.데일리;
 
-import org.junit.jupiter.api.Test;
 // 수를 입력받아 2의 거듭제곱인지 확인하는 문제
 // 1, 2, 4, 8, 16, 32, ...
 // 1 -> 몫0, 나머지1
