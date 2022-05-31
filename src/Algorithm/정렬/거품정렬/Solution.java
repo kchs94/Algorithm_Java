@@ -2,6 +2,8 @@ package Algorithm.정렬.거품정렬;
 // 거품정렬
 public class Solution {
   public static void bubbleSort(int[] arr) {
+    System.out.print("배열: ");
+    print(arr);
     for (int i=0; i<arr.length; i++) {        // 총라운드
       for (int j=0; j< arr.length-i-1; j++) { // 각 라운드
         if (arr[j] > arr[j+1]) {  // 비교
