@@ -1,4 +1,4 @@
-package Doit알고리즘.챕터1_배열과리스트;
+package Doit알고리즘.챕터1_배열과리스트.구간합구하기5_11660;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,7 +19,7 @@ import java.util.StringTokenizer;
 * // 수의 갯수만큼의 길이를 가지는 합배열을 생성하고 값을 할당한다.
 * // 합배열을 이용해서 각 구간의 합을 구한다.
 * */
-public class 구간합구하기4_11659 {
+public class Main {
   public static void main(String[] args) throws IOException {
     // 수의 갯수 N과 합을 구해야 하는 횟수 N을 입력받는다. 입력을 여러번 받으니 BufferedReader를 사용한다.
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
