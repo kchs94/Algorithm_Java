@@ -1,6 +1,5 @@
 package 인프런.DFSBFS활용.순열구하기.처음풀이;
 
-import javax.swing.text.Style;
 import java.util.Scanner;
 
 /*
