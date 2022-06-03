@@ -14,10 +14,10 @@ import java.util.ArrayList;
 * */
 public class Solution {
 
-  static ArrayList<String[]> list = new ArrayList<>();
+  ArrayList<String[]> list = new ArrayList<>();
   public int rounds;
-  static String[] oneCase;
-  static String[] rockPaperScissors = {"rock", "paper", "scissors"};
+  String[] oneCase;
+  String[] rockPaperScissors = {"rock", "paper", "scissors"};
   public void dfs(int rounds) {
     if (this.rounds == rounds) {
       for (int i=0; i<3; i++) {
