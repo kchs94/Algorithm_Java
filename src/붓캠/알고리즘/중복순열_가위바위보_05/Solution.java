@@ -32,6 +32,7 @@ public class Solution {
       }
     }
   }
+
   public ArrayList<String[]> rockPaperScissors(int rounds) {
     oneCase = new String[rounds];
     this.rounds = rounds-1;
