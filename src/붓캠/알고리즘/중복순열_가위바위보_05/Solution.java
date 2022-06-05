@@ -25,6 +25,7 @@ public class Solution {
         list.add(oneCase.clone());
       }
     }
+
     else {
       for (int i=0; i<3; i++) {
         oneCase[rounds] = rockPaperScissors[i];
