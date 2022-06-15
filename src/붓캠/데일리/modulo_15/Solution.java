@@ -1,5 +1,4 @@
 package 붓캠.데일리.modulo_15;
-import java.util.*;
 
 public class Solution {
   public Integer modulo(int num1, int num2) {
