@@ -18,7 +18,7 @@ import java.util.Scanner;
 * p1<n인 상태동안 A[p1]을 리스트에 넣고 p1 값을 1증가시킨다
 * p2<m인 상태동안 B[p2]을 리스트에 넣고 p2 값을 1증가시킨다
 * */
-public class Main {
+public class    Main {
     public static ArrayList<Integer> solution(int n, int[] A, int m, int[] B) {
         int p1 = 0;
         int p2 = 0;
