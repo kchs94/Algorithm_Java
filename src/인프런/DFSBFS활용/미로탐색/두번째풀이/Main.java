@@ -24,6 +24,7 @@ public class Main {
     static int answer;  // 경우의 수
     static int[][] map = new int[8][8];
 
+
     public static void dfs(int x, int y) {  // 필요한 정보만 매개변수로 만들다.
         if (x == 7 && y == 7) {
             answer++;
