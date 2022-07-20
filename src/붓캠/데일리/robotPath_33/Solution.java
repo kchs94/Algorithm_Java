@@ -7,6 +7,7 @@ public class Solution {
     int[][] map;
     int[] src;
     int[] dst;
+
     int min = Integer.MAX_VALUE;
     int count = 0;
 
