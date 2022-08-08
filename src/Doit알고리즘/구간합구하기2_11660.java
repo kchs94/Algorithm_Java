@@ -54,10 +54,10 @@ public class 구간합구하기2_11660 {
         StringBuilder sb = new StringBuilder();
         for (int i=0; i<M; i++) {
             st = new StringTokenizer(br.readLine());
-            x1 = Integer.parseInt(st.nextToken());
             y1 = Integer.parseInt(st.nextToken());
-            x2 = Integer.parseInt(st.nextToken());
+            x1 = Integer.parseInt(st.nextToken());
             y2 = Integer.parseInt(st.nextToken());
+            x2 = Integer.parseInt(st.nextToken());
 
             result = S[y2][x2] + S[y1-1][x1-1] - S[y1-1][x2] - S[y2][x1-1];
             sb.append(result).append("\n");
