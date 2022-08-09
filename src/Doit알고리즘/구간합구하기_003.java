@@ -22,7 +22,7 @@ import java.util.StringTokenizer;
 *   - 해당 구간의 합을 StringBuilder에 기록한다.
 * - sb를 출력한다.
 * */
-public class 구간합구하기_11659 {
+public class 구간합구하기_003 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();

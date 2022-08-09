@@ -26,7 +26,7 @@ import java.util.StringTokenizer;
 * 3.새로 배운것
 * 2차원 배열 출력 Arrays.deepToString()
 * */
-public class 구간합구하기2_11660 {
+public class 구간합구하기2_004 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
