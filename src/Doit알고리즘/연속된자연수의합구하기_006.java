@@ -15,7 +15,9 @@ import java.io.InputStreamReader;
 * - if sum < m : end++, sum += end;
 * - else if sum > m : sum -= start, start++
 * - else if sum == m: sum += ++end; answer++
-N
+*
+* - 느낀점
+* - 언제 while문을 탈출해야 생각했을 때 start <= end인 경우까지만 반복하면 된다고 생각이 들었다.
 * */
 public class 연속된자연수의합구하기_006 {
     public static void main(String[] args) throws IOException {
@@ -27,14 +29,17 @@ public class 연속된자연수의합구하기_006 {
 
         while (start <= end) {
             if (sum < n) {
-                sum += ++end;
+                end++;
+                sum += end;
             }
             else if (sum > n) {
-                sum -= start++;
+                sum -= start;
+                start++;
             }
-            else {
+            else if (sum == n){
                 answer++;
-                sum += ++end;
+                end++;
+                sum += end;
             }
         }
 
