@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.StringTokenizer;
 
 /*
+ * https://www.acmicpc.net/problem/1253
  * - 분석
  * O(N^3) 단순 for문으로 완전탐색을 해야되는 경우 연산 횟수는 최악의 경우 80억이 된다.
  *
