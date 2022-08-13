@@ -23,6 +23,7 @@ import java.util.StringTokenizer;
 * - sb를 출력한다.
 * */
 public class 구간합구하기_003 {
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
