@@ -53,6 +53,7 @@ public class 연결요소의갯수_023 {
         for (int i = 1; i <= n; i++) {
             if (!checked[i]) {
                 answer++;
+                checked[i] = true;
                 dfs(i);
             }
         }
