@@ -1,7 +1,5 @@
 package Doit알고리즘;
 
-//import java.util.Scanner;
-
 import java.util.Scanner;
 
 /*
