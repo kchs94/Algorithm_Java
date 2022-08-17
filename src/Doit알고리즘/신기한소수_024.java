@@ -13,7 +13,6 @@ import java.util.Scanner;
 * DFS를 이용하는 문제다.
 * */
 public class 신기한소수_024 {
-
     static StringBuilder sb = new StringBuilder();
     static int N;
 
