@@ -42,6 +42,7 @@ public class Main {
             graph[from][to] = 1;    // 1:연결상태를 의미
         }
 
+        // 초기화
         visited[1] = true;  // 1노드를 방문하니깐
         dfs(1); // 1노드 방문하기
         System.out.println(answer);

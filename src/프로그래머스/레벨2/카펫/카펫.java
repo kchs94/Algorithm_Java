@@ -12,7 +12,7 @@ import java.util.Arrays;
 * 조건을 보면 노란색 격자수는 반드시 존재한다.( 1 <= yellow)
 * 따라서 세로(=높이)는 무조건 최소 3이어야 한다. 왜냐하면 높이가 1 또는 2라면 노란색 격자가 존재하지 않기 때문이다.
 * */
-public class Solution {
+public class 카펫 {
     public int[] solution(int brown, int yellow) {
         int[] answer = new int[2];
 
@@ -33,7 +33,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution sol = new Solution();
+        카펫 sol = new 카펫();
         System.out.println(Arrays.toString(sol.solution(24,24)));
     }
 }

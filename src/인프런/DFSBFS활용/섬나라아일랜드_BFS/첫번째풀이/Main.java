@@ -1,9 +1,12 @@
 package 인프런.DFSBFS활용.섬나라아일랜드_BFS.첫번째풀이;
 
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
+import java.util.StringTokenizer;
 
 class Point {
     int x,y;
@@ -15,53 +18,58 @@ class Point {
 }
 public class Main {
 
-    static int N;
-    static int[][] board;
-    static int[] dx = {0,1,1,1,0,-1,-1,-1};
-    static int[] dy = {-1,-1,0,1,1,1,0,-1};
-    static int answer;
-    static Queue<Point> q = new LinkedList<>();
+    public static int[][] map;
+    public static int n;
+    static int cnt[][];
+    public static int[] dx = {2, 1, 2, 1, -2, -1, -2, -1};
+    public static int[] dy = {-1, -2, 1, 2, -1, -2, 1, 2};
 
-    public static void BFS(Point point) {
-        q.offer(point);
 
-        while (!q.isEmpty()) {
-            Point temp = q.poll();
-            for (int i=0; i<8; i++) {
-                int nx = temp.x + dx[i];
-                int ny = temp.y + dy[i];
-                if (nx >=0 && nx<N && ny >=0 && ny <N && board[nx][ny] == 1) {
-                    board[nx][ny] = 0;
-                    BFS(new Point(nx,ny));
-                }
-            }
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        StringBuilder sb = new StringBuilder();
+
+
+        st = new StringTokenizer(br.readLine());
+        n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+
+        st = new StringTokenizer(br.readLine());
+        int sx = Integer.parseInt(st.nextToken());
+        int sy = Integer.parseInt(st.nextToken());
+
+        map = new int[n + 1][n + 1];
+        bfs(sx, sy);
+
+        for (int i = 0; i < m; i++) {
+            st = new StringTokenizer(br.readLine());
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            sb.append(map[a][b]).append(" ");
         }
 
-
-
-
+        System.out.println(sb);
     }
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        N = in.nextInt();
-        board = new int[N][N];
+    public static void bfs(int sx, int sy) {
+        Queue<int[]> q = new LinkedList<>();
+        q.add(new int[]{sx, sy});
 
-        for (int i=0; i<N; i++) {
-            for (int j=0; j<N; j++) {
-                board[i][j] = in.nextInt();
-            }
-        }
-
-        for (int i=0; i<N; i++) {
-            for (int j=0; j<N; j++) {
-                if (board[i][j] == 1) {
-                    answer++;
-                    BFS(new Point(i,j));
+        while (!q.isEmpty()) {
+            int[] t = q.poll();
+            int x = t[0];
+            int y = t[1];
+            for (int i = 0; i < 8; i++) {
+                int nx = t[0] + dx[i];
+                int ny = t[1] + dy[i];
+                if (nx >= 0 && nx <= n && ny >= 0 && ny <= n) {
+                    if (map[nx][ny] == 0) {
+                        map[nx][ny] = map[x][y] + 1;
+                        q.add(new int[]{nx, ny});
+                    }
                 }
             }
         }
-
-        System.out.println(answer);
     }
 }
