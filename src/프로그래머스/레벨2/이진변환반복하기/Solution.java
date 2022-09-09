@@ -14,27 +14,19 @@ import java.util.Arrays;
 *
 * */
 public class Solution {
+    int zeroCount = 0;
+
     public int[] solution(String s) {
         int[] answer = new int[2];
         int convertCount = 0;
-        int zeroCount = 0;
 
         // 3.1과2을 s가 1이 될 때까지 반복한다
         while(!s.equals("1")) {
             
             // 1. 문자열 x의 모든 0을 제거한다
-            StringBuilder sb = new StringBuilder();
-            for (int i=0; i<s.length(); i++) {
-                char ch = s.charAt(i);
-                if (ch == '0') {
-                    zeroCount++;
-                    continue;
-                }
-                sb.append(ch);
-            }
-            
+            String x = removeZero(s);
+
             // 2. x의 길이를 c라고 하자. 길이 c를 이진법으로 바꾼 문자열을 x로 바꾼다.
-            String x = sb.toString();
             int sLen = x.length();
             s = Integer.toBinaryString(sLen);
             convertCount++;
@@ -43,6 +35,20 @@ public class Solution {
         answer[1] = zeroCount;
 
         return answer;
+    }
+
+    public String removeZero(String s) {
+        // 1. 문자열 x의 모든 0을 제거한다
+        StringBuilder sb = new StringBuilder();
+        for (int i=0; i<s.length(); i++) {
+            char ch = s.charAt(i);
+            if (ch == '0') {
+                zeroCount++;
+                continue;
+            }
+            sb.append(ch);
+        }
+        return sb.toString();
     }
 
     public static void main(String[] args) {
