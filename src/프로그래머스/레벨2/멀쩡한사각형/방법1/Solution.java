@@ -1,6 +1,6 @@
 package 프로그래머스.레벨2.멀쩡한사각형.방법1;
 
-import org.junit.Test;
+import org.testng.annotations.Test;
 import org.junit.jupiter.api.Assertions;
 
 public class Solution {

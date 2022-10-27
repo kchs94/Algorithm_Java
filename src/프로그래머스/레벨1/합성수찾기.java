@@ -2,7 +2,6 @@ package 프로그래머스.레벨1;
 
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.*;
 
 /*
 * 합성수란 약수의 갯수가 3개 이상인 수
@@ -30,7 +29,5 @@ public class 합성수찾기 {
     @Test
     void test() {
         합성수찾기 sol = new 합성수찾기();
-        assertThat(sol.solution(10)).isEqualTo(5);
-        assertThat(sol.solution(15)).isEqualTo(8);
     }
 }
