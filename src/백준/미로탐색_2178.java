@@ -42,34 +42,34 @@ public class 미로탐색_2178 {
             }
         }
 
-        bfs(new Node(1,1));
+        bfs(new Point(1,1));
 
         System.out.println(arr[N][M]);
     }
 
-    public static void bfs(Node node) {
-        Queue<Node> q = new LinkedList<>();
-        q.add(node);
+    public static void bfs(Point point) {
+        Queue<Point> q = new LinkedList<>();
+        q.add(point);
 
         while (!q.isEmpty()) {
-            Node findNode = q.poll();
+            Point findPoint = q.poll();
 
             for (int i=0; i<4; i++) {
-                int nx = findNode.x + dx[i];
-                int ny = findNode.y + dy[i];
+                int nx = findPoint.x + dx[i];
+                int ny = findPoint.y + dy[i];
                 if (nx >= 1 && nx <= M && ny >=1 && ny <=N && arr[ny][nx] == 1 ) {
-                    arr[ny][nx] = arr[findNode.y][findNode.x] + 1;    //방문체크
-                    q.add(new Node(nx,ny));
+                    arr[ny][nx] = arr[findPoint.y][findPoint.x] + 1;    //방문체크
+                    q.add(new Point(nx,ny));
                 }
             }
         }
     }
 
-    public static class Node {
+    public static class Point {
         int x;
         int y;
 
-        public Node(int x, int y) {
+        public Point(int x, int y) {
             this.x = x;
             this.y = y;
         }
