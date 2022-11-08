@@ -26,7 +26,7 @@ class Meeting implements Comparable<Meeting> {
     @Override
     public int compareTo(Meeting o) {
         if (this.end == o.end)      // 만약 끝 시간이 같다면 시작 시간을 오름차순으로 정렬
-            return this.start - this.end;
+            return this.start - o.start;
         return this.end - o.end;    // 기본적으로 끝 시간을 오름차순으로 정렬
     }
 }
