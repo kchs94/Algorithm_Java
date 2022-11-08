@@ -20,7 +20,7 @@ public class 잃어버린괄호_1541 {
         int sum = Integer.MAX_VALUE;
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer subtraction = new StringTokenizer(br.readLine(), "-");
+        StringTokenizer subtraction = new StringTokenizer(br.readLine(), "-");// 55-50+40
 
         while(subtraction.hasMoreTokens()) {
             int temp = 0;
