@@ -1,4 +1,4 @@
-package 백준.문제;
+package 백준;
 
 import java.util.Scanner;
 
