@@ -9,13 +9,25 @@ import java.util.HashSet;
 * */
 public class Solution {
     HashSet<Integer> numberSet = new HashSet<>();
-
+    HashSet<Integer> numberSet1 = new HashSet<>();
     public boolean isPrime(int num) {
         // 1. 0,1은 소수가 아니다.
         if (num == 0 || num == 1) return false;
 
         // 에토스테네스 채
         for (int i=2; i<=(int)Math.sqrt(num); i++) {
+            if (num%i == 0) return false;
+        }
+
+        return true;
+    }
+
+    public boolean isPrime2(int num) {
+        // 1. 0, 1은 소수가 아니다.
+        if(num == 0 || num == 1) return false;
+
+        // 에토스테네스 체
+        for (int i=2; i<(int)Math.sqrt(num); i++) {
             if (num%i == 0) return false;
         }
 
@@ -30,6 +42,15 @@ public class Solution {
         // 2. 남은 숫자중 한 개를 더해 새로운 조합을 만든다.
         for (int i=0; i<others.length(); i++) {
             recursive(comb + others.charAt(i), others.substring(0,i) + others.substring(i+1));
+        }
+    }
+
+    public void recursive1(String comb, String others) {
+        if (!comb.equals(""))
+            numberSet1.add(Integer.valueOf(comb));
+
+        for (int i=0; i<others.length(); i++) {
+            recursive1(comb + others.charAt(i), others.substring(0, i) + others.substring(i+1));
         }
     }
 
@@ -48,6 +69,20 @@ public class Solution {
         return count;
     }
 
+    public int solution1(String numbers) {
+        // 1. 모든 조합의 숫자를 만든다.
+        recursive("", numbers);
+        System.out.println(numberSet1);
+
+        // 2.소수의 갯수만 샌다
+        int count = 0;
+        for (Integer i : numberSet1) {
+            if (isPrime(i)) count++;
+        }
+
+        // 3. 소수의 갯수를 반환한다.
+        return count;
+    }
     public static void main(String[] args) {
         Solution sol = new Solution();
         System.out.println(sol.solution("17"));

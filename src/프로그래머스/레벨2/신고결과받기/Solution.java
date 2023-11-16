@@ -9,8 +9,12 @@ public class Solution {
         int[] answer = new int[id_list.length]; // id_list 길이로 설정
 
         // 1.중복제거
+//        HashSet<String> uniqueReport = new HashSet<>();
+//        for(String str : report) {
+//            uniqueReport.add(str);
+//        }
         HashSet<String> uniqueReport = new HashSet<>();
-        for(String str : report) {
+        for (String str : report) {
             uniqueReport.add(str);
         }
 

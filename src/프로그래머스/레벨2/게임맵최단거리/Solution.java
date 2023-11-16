@@ -6,6 +6,9 @@ import java.util.Queue;
 * 최단거리 + 2차원 배열 --> bfs
 * */
 public class Solution {
+//    int[] dx = {1, 0, -1, 0};
+//    int[] dy = {0, 1, 0, -1};
+
     int[] dx = {1, 0, -1, 0};
     int[] dy = {0, 1, 0, -1};
 
@@ -28,13 +31,19 @@ public class Solution {
     }
 
     public void bfs(int[][] maps, int[][] visited){
-        int x = 0;
+        /*int x = 0;
         int y = 0;
         visited[x][y] = 1;
         Queue<Point> q = new LinkedList<>();
-        q.add(new Point(x, y));
+        q.add(new Point(x, y));*/
 
-        while(!q.isEmpty()){
+        int x = 0;
+        int y = 0;
+        visited[x][y] = 1;
+        Queue<Point1> q = new LinkedList<>();
+        q.add(new Point1(x, y));
+
+        /*while(!q.isEmpty()){
             Point curPoint = q.poll();
             int curX = curPoint.x;
             int curY = curPoint.y;
@@ -52,8 +61,7 @@ public class Solution {
                 }
             }
 
-        }
-
+        }*/
     }
 
     public static void main(String[] args) {
@@ -75,4 +83,15 @@ class Point {
         this.x = x;
         this.y = y;
     }
+}
+
+class Point1 {
+    int x;
+    int y;
+
+    public Point1(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
 }
